@@ -1,0 +1,178 @@
+Hello.
+
+//        // prints out data into console
+//        try{
+//        FileReader reader = new FileReader("grades.txt");
+//        int data = reader.read();
+//        while(data != -1) {
+//            System.out.print((char)data);
+//            data = reader.read();
+//        }
+//        
+//        } 
+//        catch (IOException e){
+//            e.printStackTrace();
+//        }
+
+
+
+        // creates files of students and teachers
+        try {
+        FileWriter writer = new FileWriter("grades.txt");
+        writer.write("Students\n");
+        for(int i = 0; i < students.size(); i++){
+            
+            writer.write("Name: "+ students.get(i).getName());
+            writer.write("\nAge: "+ students.get(i).getAge());
+            writer.write("\nGrade: "+ students.get(i).getPercentage()+"\n\n");
+        }
+        writer.write("Teachers\n");
+        for(int i = 0; i < students.size(); i++){
+            
+            writer.write("Name: "+ teachers.get(i).getName());
+            writer.write("\nAge: "+ teachers.get(i).getAge());
+            writer.write("\nSalary: "+ teachers.get(i).getSalary()+"\n\n");
+        }
+        
+            writer.close();
+
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+        
+        
+        // deskplacement
+ public ArrayList<ArrayList<String>> deskPlacement(ArrayList<Student> students){
+		
+    	ArrayList<ArrayList<String>> deskPlacement = new ArrayList<ArrayList<String>>();
+    	if(students.size() % 2 == 0) {
+    		ArrayList<String> firstDesk = new ArrayList<String>();
+    		ArrayList<String> secondDesk = new ArrayList<String>();
+    		for( int i = 0; i < students.size()/2; i++) {
+    			firstDesk.add(students.get(i).getName());
+    			secondDesk.add(students.get(students.size()-i-1).getName());
+    		}
+    		deskPlacement.add(firstDesk);
+    		deskPlacement.add(secondDesk);
+    	}
+    	else if(students.size() % 3 == 0) {
+    		ArrayList<String> firstDesk = new ArrayList<String>();
+    		ArrayList<String> secondDesk = new ArrayList<String>();
+    		ArrayList<String> thirdDesk = new ArrayList<String>();
+    		
+    		for(int i = 0; i < students.size()*(1/3); i++) {
+    			firstDesk.add(students.get(i).getName());
+    			secondDesk.add(students.get(i+students.size()*(1/3)).getName());
+    			thirdDesk.add(students.get(i+students.size()*(2/3)).getName());
+
+    		}
+    		deskPlacement.add(firstDesk);
+    		deskPlacement.add(secondDesk);
+    		deskPlacement.add(thirdDesk);
+    	}
+    	else if (students.size() % 5 == 0){
+    		ArrayList<String> firstDesk = new ArrayList<String>();
+    		ArrayList<String> secondDesk = new ArrayList<String>();
+    		ArrayList<String> thirdDesk = new ArrayList<String>();
+    		ArrayList<String> fourthDesk = new ArrayList<String>();
+    		ArrayList<String> fifthDesk = new ArrayList<String>();
+    		
+    		for(int i = 0; i < students.size()*(1/5); i++) {
+    			firstDesk.add(students.get(i).getName());
+    			secondDesk.add(students.get(i+students.size()*(1/5)).getName());
+    			thirdDesk.add(students.get(i+students.size()*(2/5)).getName());
+    			fourthDesk.add(students.get(i+students.size()*(3/5)).getName());
+    			fifthDesk.add(students.get(i+students.size()*(4/5)).getName());
+
+    		}
+    		deskPlacement.add(firstDesk);
+    		deskPlacement.add(secondDesk);
+    		deskPlacement.add(thirdDesk);
+    		deskPlacement.add(fourthDesk);
+    		deskPlacement.add(fifthDesk);
+    		
+    	}
+    	else if (students.size() % 7 == 0) {
+    		ArrayList<String> firstDesk = new ArrayList<String>();
+    		ArrayList<String> secondDesk = new ArrayList<String>();
+    		ArrayList<String> thirdDesk = new ArrayList<String>();
+    		ArrayList<String> fourthDesk = new ArrayList<String>();
+    		ArrayList<String> fifthDesk = new ArrayList<String>();
+    		ArrayList<String> sixthDesk = new ArrayList<String>();
+    		ArrayList<String> seventhDesk = new ArrayList<String>();
+    		
+    		for(int i = 0; i < students.size()*(1/5); i++) {
+    			firstDesk.add(students.get(i).getName());
+    			secondDesk.add(students.get(i+students.size()*(1/7)).getName());
+    			thirdDesk.add(students.get(i+students.size()*(2/7)).getName());
+    			fourthDesk.add(students.get(i+students.size()*(3/7)).getName());
+    			fifthDesk.add(students.get(i+students.size()*(4/7)).getName());
+    			sixthDesk.add(students.get(i+students.size()*(5/7)).getName());
+    			seventhDesk.add(students.get(i+students.size()*(6/7)).getName());
+
+    		}
+    		deskPlacement.add(firstDesk);
+    		deskPlacement.add(secondDesk);
+    		deskPlacement.add(thirdDesk);
+    		deskPlacement.add(fourthDesk);
+    		deskPlacement.add(fifthDesk);
+    		deskPlacement.add(sixthDesk);
+    		deskPlacement.add(seventhDesk);	
+    	}
+    	
+    	return deskPlacement;
+    	
+    }
+    
+    //        // creates files of students and teachers
+//        try {
+//        FileWriter writer = new FileWriter("grades.txt");
+//        writer.write("Students\n");
+//        for(int i = 0; i < students.size(); i++){
+//            
+//            writer.write("Name: "+ students.get(i).getName());
+//            writer.write("\nAge: "+ students.get(i).getAge());
+//            writer.write("\nGrade: "+ students.get(i).getPercentage()+"\n\n");
+//        }
+//         ArrayList<ArrayList<String>> deskPlacement = students.get(0).deskPlacement(students);
+//         writer.write("\n\n\n\n\nSeating Chart:\n\n");
+//         for( int i = 0; i < deskPlacement.size(); i++) {
+//        	 writer.write("[");
+//        	 for( int j = 0; j < deskPlacement.get(i).size(); j++) {
+//        		 if(j == deskPlacement.get(i).size()-1) {
+//            		 writer.write(deskPlacement.get(i).get(j) + "]\n");
+//        		 }
+//        		 else {
+//            		 writer.write(deskPlacement.get(i).get(j) + ", ");
+//        		 }
+//        	 }
+//         }
+//         
+//            writer.close();
+//
+//        } catch (IOException e){
+//            e.printStackTrace();
+//        }
+    
+        Unit 1 (done)
+        Unit 2 (done)
+        Unit 3 (done)
+        Unit 4 (done)
+        Unit 5 (done)
+        Unit 6 (done)
+        Unit 7 (done)
+        Unit 8 sockets (is not working :/)
+        Unit 9 (done)
+        Unit 10 (done)
+        Unit 11
+        Unit 12 
+        Unit 13 (done)
+        Unit 14 (done)
+        Unit 15 (done)
+        
+        
+        
+       
+        
+        
+ 

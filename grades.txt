@@ -1,0 +1,50 @@
+Students
+Name: Evelyn
+Age: 26
+Grade: 62
+
+Name: John
+Age: 25
+Grade: 67
+
+Name: Thomas
+Age: 31
+Grade: 92
+
+Name: Thomas
+Age: 21
+Grade: 88
+
+Name: Paul
+Age: 29
+Grade: 20
+
+Name: Lauren
+Age: 22
+Grade: 13
+
+Name: Evelyn
+Age: 18
+Grade: 42
+
+Name: John
+Age: 28
+Grade: 25
+
+Name: Evelyn
+Age: 15
+Grade: 19
+
+Name: Paul
+Age: 29
+Grade: 54
+
+
+
+
+
+
+Seating Chart:
+
+[Evelyn, John, Thomas, Thomas, Paul]
+[Paul, Evelyn, John, Evelyn, Lauren]
